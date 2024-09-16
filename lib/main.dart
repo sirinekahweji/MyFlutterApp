@@ -15,15 +15,12 @@ class Home extends StatelessWidget {
         centerTitle: true,
         backgroundColor: const Color.fromARGB(255, 244, 184, 215),
       ),
-      body: Center(
-          child: ElevatedButton.icon(
-        onPressed: () {},
-        icon: Icon(Icons.mail),
-        label: Text('mail me'),
-        style: ElevatedButton.styleFrom(
-          backgroundColor: Colors.amber, // Set button background color
-        ),
-      )),
+      body: Container(
+        color: Colors.grey[400],
+        padding: EdgeInsets.all(20.0),
+        margin: EdgeInsets.fromLTRB(10.0, 20.0, 30.0, 40.0),
+        child: Text('hay , i learn flutter !'),
+      ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
         child: const Icon(Icons.add), // Using an icon is more common for FABs.
