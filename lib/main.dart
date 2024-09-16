@@ -15,11 +15,23 @@ class Home extends StatelessWidget {
         centerTitle: true,
         backgroundColor: const Color.fromARGB(255, 244, 184, 215),
       ),
-      body: Container(
-        color: Colors.grey[400],
-        padding: EdgeInsets.all(20.0),
-        margin: EdgeInsets.fromLTRB(10.0, 20.0, 30.0, 40.0),
-        child: Text('hay , i learn flutter !'),
+      body: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text('hi again !'),
+          TextButton(
+              onPressed: () {},
+              style: TextButton.styleFrom(
+                backgroundColor: Colors.pink,
+              ),
+              child: Text('click here')),
+          Container(
+            color: Colors.amber[100],
+            padding: EdgeInsets.all(20.0),
+            child: Text('Conatiner Text hh'),
+          )
+        ],
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
