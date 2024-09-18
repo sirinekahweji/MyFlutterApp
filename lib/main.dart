@@ -15,21 +15,27 @@ class Home extends StatelessWidget {
         centerTitle: true,
         backgroundColor: const Color.fromARGB(255, 244, 184, 215),
       ),
-      body: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        crossAxisAlignment: CrossAxisAlignment.start,
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Text('hi again !'),
-          TextButton(
-              onPressed: () {},
-              style: TextButton.styleFrom(
-                backgroundColor: Colors.pink,
-              ),
-              child: Text('click here')),
+          Row(
+            children: [Text('texy1'), Text('Text2')],
+          ),
           Container(
-            color: Colors.amber[100],
-            padding: EdgeInsets.all(20.0),
-            child: Text('Conatiner Text hh'),
+            padding: EdgeInsets.all(30.0),
+            color: Colors.purple[300],
+            child: Text(' i learn more about flutter column0'),
+          ),
+          Container(
+            padding: EdgeInsets.all(30.0),
+            color: const Color.fromARGB(255, 224, 153, 237),
+            child: Text(' i learn more about flutter column1'),
+          ),
+          Container(
+            padding: EdgeInsets.all(30.0),
+            color: const Color.fromARGB(255, 239, 209, 245),
+            child: Text(' i learn more about flutter column2'),
           )
         ],
       ),
