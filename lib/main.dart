@@ -15,28 +15,36 @@ class Home extends StatelessWidget {
         centerTitle: true,
         backgroundColor: const Color.fromARGB(255, 244, 184, 215),
       ),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.center,
+      body: Row(
         children: [
-          Row(
-            children: [Text('texy1'), Text('Text2')],
+          Expanded(
+            child: Image.asset('assets/space.jpg'),
+            flex: 3,
           ),
-          Container(
-            padding: EdgeInsets.all(30.0),
-            color: Colors.purple[300],
-            child: Text(' i learn more about flutter column0'),
+          Expanded(
+            flex: 3,
+            child: Container(
+              padding: EdgeInsets.all(20.0),
+              color: Colors.pink[200],
+              child: Text('con1'),
+            ),
           ),
-          Container(
-            padding: EdgeInsets.all(30.0),
-            color: const Color.fromARGB(255, 224, 153, 237),
-            child: Text(' i learn more about flutter column1'),
+          Expanded(
+            flex: 2,
+            child: Container(
+              padding: EdgeInsets.all(20.0),
+              color: Colors.pink[300],
+              child: Text('con2'),
+            ),
           ),
-          Container(
-            padding: EdgeInsets.all(30.0),
-            color: const Color.fromARGB(255, 239, 209, 245),
-            child: Text(' i learn more about flutter column2'),
-          )
+          Expanded(
+            flex: 1,
+            child: Container(
+              padding: EdgeInsets.all(20.0),
+              color: Colors.pink[400],
+              child: Text('con3'),
+            ),
+          ),
         ],
       ),
       floatingActionButton: FloatingActionButton(
