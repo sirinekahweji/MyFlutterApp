@@ -1,18 +1,24 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MaterialApp(home: NinjaCard()));
+  runApp(const MaterialApp(home: NinjaCard()));
 }
 
-class NinjaCard extends StatelessWidget {
+class NinjaCard extends StatefulWidget {
   const NinjaCard({super.key});
 
+  @override
+  State<NinjaCard> createState() => _NinjaCardState();
+}
+
+class _NinjaCardState extends State<NinjaCard> {
+  int ninjalevel = 10;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.purple[50],
       appBar: AppBar(
-        title: Text(
+        title: const Text(
           'Ninja ID Card',
           style: TextStyle(
             color: Colors.white,
@@ -22,20 +28,31 @@ class NinjaCard extends StatelessWidget {
         backgroundColor: const Color.fromARGB(255, 159, 6, 126),
         elevation: 0.0,
       ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          setState(() {
+             ninjalevel += 1;
+          });
+         
+        },
+        foregroundColor: Colors.white,
+        backgroundColor: const Color.fromARGB(255, 159, 6, 126),
+        child: const Icon(Icons.add),
+      ),
       body: Padding(
-        padding: EdgeInsets.all(20.0),
+        padding: const EdgeInsets.all(20.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Center(
+            const Center(
               child: CircleAvatar(
                 backgroundImage: AssetImage('syrineninja.png'),
                 radius: 60.0,
               ),
             ),
-            Divider(
+            const Divider(
               height: 90.0,
-              color: const Color.fromARGB(255, 168, 10, 134),
+              color: Color.fromARGB(255, 168, 10, 134),
             ),
             Text(
               'NAME',
@@ -44,19 +61,19 @@ class NinjaCard extends StatelessWidget {
                 letterSpacing: 2.0,
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 10.0,
             ),
-            Text(
-              'Syrina ',
+            const Text(
+              'Syrinaaa ',
               style: TextStyle(
-                color: const Color.fromARGB(255, 168, 10, 134),
+                color: Color.fromARGB(255, 168, 10, 134),
                 letterSpacing: 2.0,
                 fontSize: 20.0,
                 fontWeight: FontWeight.bold,
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 30.0,
             ),
             Text(
@@ -66,25 +83,26 @@ class NinjaCard extends StatelessWidget {
                 letterSpacing: 2.0,
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 10.0,
             ),
             Text(
-              '6 ',
-              style: TextStyle(
-                color: const Color.fromARGB(255, 168, 10, 134),
+              '$ninjalevel',
+              style: const TextStyle(
+                color: Color.fromRGBO(168, 10, 134, 1),
                 letterSpacing: 2.0,
                 fontSize: 20.0,
                 fontWeight: FontWeight.bold,
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 30.0,
             ),
             Row(
               children: [
-                Icon(Icons.email, color: Color.fromARGB(255, 168, 10, 134)),
-                SizedBox(
+                const Icon(Icons.email,
+                    color: Color.fromARGB(255, 168, 10, 134)),
+                const SizedBox(
                   width: 10.0,
                 ),
                 Text(
