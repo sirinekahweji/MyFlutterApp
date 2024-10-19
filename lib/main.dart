@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'quote.dart';
 
 void main() {
   runApp(const MaterialApp(home: QuateList()));
@@ -12,17 +13,22 @@ class QuateList extends StatefulWidget {
 }
 
 class _QuateListState extends State<QuateList> {
-  List<String> quotes = [
-    'The only way to do great work is to love what you do',
-    'Your time is limited, so don\'t waste it living someone else\'s life.',
-    'Success is not the key to happiness. Happiness is the key to success.',
-    'Success is not an accident, it\'s a mindset. You have to believe in yourself when no one else does.'
-  ];
-  List<String> authors =[
-    'Albert Schweitzer',
-    'Theodore Roosevelt',
-    'Mahatma Gandhi ',
-    'Winston Churchill'
+  List<Quote> quotes = [
+    Quote(
+        text: 'The only way to do great work is to love what you do',
+        author: 'Albert Schweitzer'),
+    Quote(
+        text:
+            'Your time is limited, so don\'t waste it living someone else\'s life.',
+        author: 'Theodore Roosevelt'),
+    Quote(
+        text:
+            'Success is not the key to happiness. Happiness is the key to success.',
+        author: 'Mahatma Gandhi'),
+    Quote(
+        text:
+            'Success is not an accident, it\'s a mindset. You have to believe in yourself when no one else does.',
+        author: 'Winston Churchill')
   ];
 
   @override
@@ -43,7 +49,7 @@ class _QuateListState extends State<QuateList> {
           return Padding(
             padding: const EdgeInsets.all(8.0),
             child: Text(
-              quote,
+              '${quote.text}   :    ${quote.author}',
               style: const TextStyle(
                 fontSize: 18.0,
                 color: Color.fromARGB(255, 20, 20, 20),
