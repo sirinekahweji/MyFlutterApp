@@ -1,7 +1,59 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MaterialApp(home: NinjaCard()));
+  runApp(const MaterialApp(home: QuateList()));
+}
+
+class QuateList extends StatefulWidget {
+  const QuateList({super.key});
+
+  @override
+  State<QuateList> createState() => _QuateListState();
+}
+
+class _QuateListState extends State<QuateList> {
+  List<String> quotes = [
+    'The only way to do great work is to love what you do',
+    'Your time is limited, so don\'t waste it living someone else\'s life.',
+    'Success is not the key to happiness. Happiness is the key to success.',
+    'Success is not an accident, it\'s a mindset. You have to believe in yourself when no one else does.'
+  ];
+  List<String> authors =[
+    'Albert Schweitzer',
+    'Theodore Roosevelt',
+    'Mahatma Gandhi ',
+    'Winston Churchill'
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Colors.white,
+      appBar: AppBar(
+        title: const Text(
+          'Awesome Quotes',
+          style: TextStyle(color: Colors.white),
+        ),
+        backgroundColor: const Color.fromARGB(255, 6, 146, 159),
+        centerTitle: true,
+      ),
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: quotes.map((quote) {
+          return Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Text(
+              quote,
+              style: const TextStyle(
+                fontSize: 18.0,
+                color: Color.fromARGB(255, 20, 20, 20),
+              ),
+            ),
+          );
+        }).toList(),
+      ),
+    );
+  }
 }
 
 class NinjaCard extends StatefulWidget {
@@ -31,9 +83,8 @@ class _NinjaCardState extends State<NinjaCard> {
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           setState(() {
-             ninjalevel += 1;
+            ninjalevel += 1;
           });
-         
         },
         foregroundColor: Colors.white,
         backgroundColor: const Color.fromARGB(255, 159, 6, 126),
